@@ -1,8 +1,8 @@
 import { z } from 'zod'
 import { Agent } from '@openserv-labs/sdk'
 import 'dotenv/config'
-import { fetchRecentPostsForCurrency } from '../util/fetchData'
-import { buildSummaryPrompt, generateSummary } from '../util/getSummary'
+import { fetchRecentPostsForCurrency } from './util/fetchData'
+import { buildSummaryPrompt, generateSummary } from './util/getSummary'
 
 const agent = new Agent({
   port: 8000,

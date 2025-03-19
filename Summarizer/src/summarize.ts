@@ -6,7 +6,7 @@ dotenv.config();
 
 
 
-export function buildSummaryPrompt(posts:string, whaleTs:string): string {
+export function buildSummaryPrompt(posts: string, whaleTs: string): string {
     const prompt = `You are a financial analysis assistant.
 Given the following posts regarding cryptocurrency market sentiment, generate a concise summary that highlights key market signals regarding the token, overall sentiment, and any notable insights:
 
@@ -14,6 +14,11 @@ ${posts}
 
 Use the following Whale Transactions to assist you: ${whaleTs}
 Provide your summary in a clear, concise, and actionable format.
+Output Format:
+### Risk Factor: A score between 1-10
+### Whale Transaction Sentiment: Bearish || Bullish || Neutral
+### List of Whale Transactions: List down the whale transactions you used to analyise.
+### Conclusion: Make a final conclusion of the market on the user specified coin.
 Summary:`;
     return prompt;
 }
